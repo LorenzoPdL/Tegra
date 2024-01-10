@@ -6,42 +6,59 @@
     <title>Document</title>
 </head>
 <body>
+
     <h1>name media</h1>
     <p id="p1"> historico </p>
+
     <input type="button" value="Novo Calculo" onclick="insert()">
     <input type="button" value="Remover historico" onclick="delHist()">
+
 </body>
 <script>
-let historico = [];
-let number = 0;
-function insert(){
-    let person1 = {
-        name: prompt("insert name 1"),
-        age: prompt("insert age 1")
-    }
-    let person2 = {
-        name: prompt("insert name 2"),
-        age: prompt("insert age 2")
-    }
-    let result = "a idade media entre "+person1.name+" e "+person2.name+" e de: "+((parseInt(person1.age)+parseInt(person2.age))/2).toFixed(1)+"anos";
-    alert(result);
-    historico[number] = result;
-    number++;
-    showCalc();
-}
-function showCalc(){
-    var output = "";
-    for (let i=0; i<number; i++) {
-        output += historico[i] + "<br>";
+
+    let historico = [];
+    let number = 0;
+
+    function insert(){
+
+        let person1 = {
+
+            name: prompt("insert name 1"),
+            age: prompt("insert age 1")
+        };
+
+        let person2 = {
+
+            name: prompt("insert name 2"),
+            age: prompt("insert age 2")
+        };
+        
+        let result = "a idade media entre "+person1.name+" e "+person2.name+" e de: "+((parseInt(person1.age)+parseInt(person2.age))/2).toFixed(1)+"anos";
+
+        alert(result);
+        historico[number] = result;
+        number++;
+        showCalc();
     }
 
-    document.getElementById("p1").innerHTML = output;
-}
-function delHist(){
-    output = "";
-    number = 0;
-    historico = []
-    document.getElementById("p1").innerHTML = output;
-}   
+    function showCalc(){
+
+        var output = "";
+
+        for (let i=0; i<number; i++) {
+
+            output += historico[i] + "<br>";
+        }
+
+        document.getElementById("p1").innerHTML = output;
+    }
+
+    function delHist(){
+
+        output = "";
+        number = 0;
+        historico = []
+        document.getElementById("p1").innerHTML = output;
+    }   
 </script>
 </html>

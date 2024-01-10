@@ -6,19 +6,54 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>raio circulo</h1>
+
+    <h1>funcionario</h1>
     <p id="p1"> historico </p>
+
     <input type="button" value="Novo Calculo" onclick="novoCalculo()">
     <input type="button" value="Deletar historico" onclick="delHist()">
+
 </body>
 <script>
-    novoCalculo(){
+
+    let historico = [];
+    let number = 0;
+
+    function novoCalculo(){
+
         let funcionario = {
-            nome: prompt("insira o noime do funcionario"),
+
+            nome: prompt("insira o nome do funcionario"),
             valorPHora: prompt("insira o valor por hora recebido de "+this.nome),
             horas: prompt("insira o valor de horas trabalhadas por "+this.nome) 
-        }
-        let resultado = 
+        };
+
+        let resultado = "o valor que deve ser recebido por "+funcionario.nome+" e de "+(parseInt(funcionario.valorPHora)*parseInt(funcionario.horas))+"Reais";
+        alert(resultado);
+
+        historico[number] = resultado;
+        number++;
+        showCalc();
     }
+
+    function showCalc(){
+
+        var output = "";
+
+        for (let i=0; i<number; i++) {
+            
+            output += historico[i] + "<br>";
+        }
+
+        document.getElementById("p1").innerHTML = output;
+    }
+
+    function delHist(){
+        output = "";
+        number = 0;
+        historico = [];
+        document.getElementById("p1").innerHTML = output;
+    }
+
 </script>
 </html>

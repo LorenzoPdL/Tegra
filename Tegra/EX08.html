@@ -7,7 +7,7 @@
 </head>
 <body>
 
-    <h1>raio circulo</h1>
+    <h1>ABC</h1>
     <p id="p1"> historico </p>
 
     <input type="button" value="Novo Calculo" onclick="novoCalculo()">
@@ -15,32 +15,36 @@
 
 </body>
 <script>
-
-    let historico = [];
-    let number = 0;
+    
+    historico = [];
+    number = 0;
 
     function novoCalculo(){
 
-        let raio = prompt("insira o raio");
-        let area = Math.PI*(raio**2);
-        let roundedArea = "o raio e: "+area.toFixed(3);
+    var A = prompt("insira valor A");
+    var B = prompt("insira valor B");
+    var C = prompt("insira valor C");
 
-        alert(roundedArea);
-        historico[number] = roundedArea;
-        number++;
-        showCalc();
+
+    var aQuadrado = (A**2).toFixed(4);
+    var aTriangulo = ((+A * +B)/2).toFixed(4);
+    var aTrapezio = (((+A + +B)*+C)/+2).toFixed(4);
+    var resultado = "a) "+aQuadrado+" b) "+aTriangulo+" c) "+aTrapezio;
+    alert(resultado);
+    historico[number] = resultado;
+    number++
+    showCalc();
     }
 
     function showCalc(){
 
-        var output = "";
+    var output = "";
+    for (let i=0; i<number; i++) {
 
-        for (let i=0; i<number; i++) {
-            
-            output += historico[i] + "<br>";
-        }
+        output += historico[i] + "<br>";
+    }
 
-        document.getElementById("p1").innerHTML = output;
+    document.getElementById("p1").innerHTML = output;
     }
 
     function delHist(){
@@ -50,6 +54,5 @@
         historico = [];
         document.getElementById("p1").innerHTML = output;
     }
-
 </script>
 </html>

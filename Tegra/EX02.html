@@ -6,62 +6,76 @@
     <title>Document</title>
 </head>
 <body>
+
     <h1>Qual a area? </h1>
     <p id="p1"> historico </p>
+
     <input type="button" value="Novo Calculo" onclick="newCalc()">
     <input type="button" value="Remover historico" onclick="delHist()">
+
 </body>
 <script>
 
-var historico = [];
-let number = 0;
+    var historico = [];
+    let number = 0;
 
-function newCalc(){
+    function newCalc(){
 
-var Values = [];
+    var Values = [];
+    
+    let input = prompt("insert base");
+    if (input!=null && input!=""){
 
-let input = prompt("insert base");
-if (input!=null && input!=""){
-    Values[0] = input;
-}
-else{
-    alert("nothing added(null or invalid value)");
-}
+        Values[0] = input;
+    }
+    else{
 
-input = prompt("insert height");
-if (input!=null && input!=""){
-    Values[1] = input;
-}
-else{
-    alert("nothing added(null or invalid value)");
-}
-
-let calcResult = {
-    area: Values[0]*Values[1],
-    perimetro: (Values[0]*2)+(Values[1]*2),
-    diagonal: Math.sqrt((Values[0]**2)+(Values[1]**2))
-}
-let resumo = "( base:"+Values[0]+", height: "+Values[1]+" ) "+"area: "+(calcResult.area).toFixed(4)+" perimeter: "+(calcResult.perimetro).toFixed(4)+" Diagonal:"+(calcResult.diagonal).toFixed(4);
-alert(resumo);
-historico[number] = resumo;
-number++;
-showCalc();
-}
-
-function showCalc(){
-    var output = "";
-    for (let i=0; i<number; i++) {
-        output += historico[i] + "<br>";
+        alert("nothing added(null or invalid value)");
     }
 
-    document.getElementById("p1").innerHTML = output;
-}
+    input = prompt("insert height");
+    if (input!=null && input!=""){
 
-function delHist(){
-    output = "";
-    number = 0;
-    historico = [];
-    document.getElementById("p1").innerHTML = output;
-}
+        Values[1] = input;
+    }
+    else{
+
+        alert("nothing added(null or invalid value)");
+    }
+
+    let calcResult = {
+
+        area: Values[0]*Values[1],
+        perimetro: (Values[0]*2)+(Values[1]*2),
+        diagonal: Math.sqrt((Values[0]**2)+(Values[1]**2))
+    }
+
+    let resumo = "( base:"+Values[0]+", height: "+Values[1]+" ) "+"area: "+(calcResult.area).toFixed(4)+" perimeter: "+(calcResult.perimetro).toFixed(4)+" Diagonal:"+(calcResult.diagonal).toFixed(4);
+
+    alert(resumo);
+    historico[number] = resumo;
+    number++;
+    showCalc();
+    }
+
+    function showCalc(){
+
+        var output = "";
+
+        for (let i=0; i<number; i++) {
+
+            output += historico[i] + "<br>";
+        }
+
+        document.getElementById("p1").innerHTML = output;
+    }
+
+    function delHist(){
+
+        output = "";
+        number = 0;
+        historico = [];
+        document.getElementById("p1").innerHTML = output;
+    }
 </script>
 </html>

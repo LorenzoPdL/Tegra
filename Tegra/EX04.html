@@ -12,30 +12,39 @@
     <input type="button" value="Remover historico" onclick="delHist()">
 </body>
 <script>
+
     let historico = [];
     let number = 0;
+
     function insert(){
-    let preco = prompt("insira preco do produto");
-    let quantia = prompt("insira quantia do produto");
-    let pago = prompt("insira valor pago");
-    let troco = "seu troco e: " + (pago - (preco*quantia));
-    alert(troco);
-    historico[number] = troco;
-    number++;
-    showHist(); 
+
+        let preco = prompt("insira preco do produto");
+        let quantia = prompt("insira quantia do produto");
+        let pago = prompt("insira valor pago");
+        let troco = "seu troco e: " + (pago - (preco*quantia));
+
+        alert(troco);
+        historico[number] = troco;
+        number++;
+        showHist(); 
+
     }
     function showHist(){
-    var output = "";
-    for(i=0; i<number; i++){
-    output += historico[i] + "<br>";
-    }
-    document.getElementById("p1").innerHTML = output;
+
+        var output = "";
+
+        for(i=0; i<number; i++){
+            
+            output += historico[i] + "<br>";
+        }
+        document.getElementById("p1").innerHTML = output;
     }
     function delHist(){
-    number = 0;
-    output = "";
-    historico = [];
-    document.getElementById("p1").innerHTML = output;
+
+        number = 0;
+        output = "";
+        historico = [];
+        document.getElementById("p1").innerHTML = output;
     }
 
 </script>
