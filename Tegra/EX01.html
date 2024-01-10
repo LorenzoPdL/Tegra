@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Qual a area? </h1>
+    <p id="p1"> resultados </p>
+    <input type="button" value="Novo Calculo" onclick="newCalc()">
+    <input type="button" value="Remover historico" onclick="delHist()">
+</body>
+
+<script>
+    var historico = [];
+    var number = 0;
+function newCalc(){
+
+    var Values = [];
+
+    let input = prompt("Insira a largura do terreno");
+    if (input!=null && input!=""){
+        Values[0] = input;
+    }
+    else{
+        alert("nothing added(null value)");
+    }
+
+    input = prompt("Insira o comprimento do terreno");
+    if (input!=null && input!=""){
+    Values[1] = input;
+    }
+    else{
+        alert("nothing added(null value)");
+    }
+
+    input = prompt("Insira o valor do metro quadrado");
+    if (input!=null && input!=""){
+        Values[2] = input;
+    }
+    else{
+        alert("nothing added(null value)");
+    }
+
+    var calcResult = "("+Values[0]+","+Values[1]+","+Values[2]+") "+"area: "+Values[0]*Values[1]+" valor: "+(Values[0]*Values[1])*Values[2];
+    alert(calcResult);
+    historico[number] = calcResult;
+    number++;
+    showCalc();
+}
+
+function showCalc(){
+    var output = "";
+    for (let i=0; i<number; i++) {
+        output += historico[i] + "<br>";
+    }
+
+    document.getElementById("p1").innerHTML = output;
+}
+function delHist(){
+    output = "";
+    number = 0;
+    historico = [];
+    document.getElementById("p1").innerHTML = output;
+}
+
+
+
+
+</script>
+</html>

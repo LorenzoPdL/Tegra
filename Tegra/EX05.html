@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>raio circulo</h1>
+    <p id="p1"> historico </p>
+    <input type="button" value="Novo Calculo" onclick="novoCalculo()">
+    <input type="button" value="Deletar historico" onclick="delHist()">
+</body>
+<script>
+    let historico = [];
+    let number = 0;
+function novoCalculo(){
+    let raio = prompt("insira o raio");
+    let area = Math.PI*(raio**2);
+    let roundedArea = "o raio e: "+area.toFixed(3);
+    alert(roundedArea);
+    historico[number] = roundedArea;
+    number++;
+    showCalc();
+}
+function showCalc(){
+    var output = "";
+    for (let i=0; i<number; i++) {
+        output += historico[i] + "<br>";
+    }
+
+    document.getElementById("p1").innerHTML = output;
+}
+function delHist(){
+    output = "";
+    number = 0;
+    historico = [];
+    document.getElementById("p1").innerHTML = output;
+}
+</script>
+</html>
