@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>EX14</h1>
+    <input type="button" value="calcular" onclick="calcular()">
+</body>
+<script>
+    function calcular(){
+
+        let venda = {
+            precoUnit: prompt("Preço unitário do produto:"),
+            quantidade: prompt("Quantidade comprada:"),
+            valorRecebido: prompt("Dinheiro recebido:")
+        };
+
+        if(venda.precoUnit*venda.quantidade > venda.valorRecebido){
+            alert("DINHEIRO INSUFICIENTE. FALTAM " + ((venda.precoUnit*venda.quantidade) - venda.valorRecebido).toFixed(2) + " REAIS");
+        }else{
+            let troco = (venda.valorRecebido - (venda.precoUnit*venda.quantidade));
+            alert("TROCO: " + troco.toFixed(2));
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>EX12</h1>
+
+    <input type="button" value="Calcular" onclick="Calcular()">
+
+</body>
+<script>
+ 
+function Calcular() {
+
+    let numero = [];
+    numero[0] = prompt("insira variavel a");
+    numero[1] = prompt("insira variavel b");
+    numero[2] = prompt("insira variavel c");
+
+    let raiz = Bhaskhara(numero[0],numero[1],numero[2]);
+
+    if(raiz.delta == -1){
+        alert('Esta equação não possui raízes reais');
+    } else{
+        alert("X1: " + (raiz.x1).toFixed(4) + ", X2: " + (raiz.x2).toFixed(4));
+        alert("delta: " + raiz.delta);
+    }
+}
+
+function Bhaskhara( a, b, c){
+
+    let delta = -1;
+
+    if ((b**2 - (4*a*c))>=0){
+        delta = Math.sqrt(b**2 - (4*a*c));
+    }
+
+    let raiz = {
+        x1: (-b + delta)/(2*a),
+        x2: (-b - delta)/(2*a),
+        delta: delta
+    }
+    return raiz;
+}
+
+</script>
+</html>

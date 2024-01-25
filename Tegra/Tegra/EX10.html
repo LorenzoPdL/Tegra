@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>EX10</h1>
+
+    <input type="button" value="Calcular" onclick="Calcular()">
+
+</body>
+<script>
+ 
+function Calcular() {
+    let numero = [];
+    numero[0] = prompt("insira numero 1");
+    numero[1] = prompt("insira numero 2");
+    numero[2] = prompt("insira numero 3");
+
+    let menorNumero = numero[0];
+    for(let i=1; i <= 2; i++){
+        if(menorNumero > numero[i]){
+            menorNumero = numero[i];
+        }
+        else{
+            continue;
+        }
+    }
+    alert("o menor numer e: "+menorNumero);
+}
+
+</script>
+</html>

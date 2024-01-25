@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>EX26</h1>
+    <input type="button" value="calcular" onclick="calc()">
+</body>
+<script>
+    function calc(){
+
+        let palavra = prompt('Números iniciais ( DIVIDIR COM ","').toLowerCase();;
+
+
+        let grupos = [
+            ['a','e','i','o','u'],
+            ['b','c','d','f','g','j','k','l','m','n','p','q', 'r', 's', 't', 'v', 'w', 'y', 'z']
+        ];
+
+        let vogais = 0;
+        let consoantes = 0;
+
+        for (let i = 0; i <= palavra.length; i++) {
+            for(let x=0; x <= grupos[1].length;x++){
+                if(palavra.charAt(i).includes(grupos[0][x])){
+                vogais++;
+                } else if (palavra.charAt(i).includes(grupos[1][x])){
+                consoantes++;
+                }
+            }
+        }
+        alert("Vogais: "+vogais+", Consoantes: "+consoantes);
+   }
+</script>
+</html>

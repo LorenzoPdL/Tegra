@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>EX28</h1>
+    <input type="button" value="calcular" onclick="calc()">
+</body>
+<script>
+    function calc(){
+
+        let data = prompt('Valores iniciais (separacao por virgula)');
+        data = data.split(",");
+
+        let menor = data[0];
+        let maior = data[0];
+
+        if((menor.includes(" ") || menor.includes("")) || (maior.includes(" ")|| maior.includes(""))){
+            alert("formatacao irregular");
+                    return 0;
+        }
+
+        for(let i = 0; i < data.length; i++){
+            if(menor > data[i]){
+            menor = data[i];
+            }
+            if(maior < parseInt(data[i])){
+            maior = data[i];
+            }
+        }
+
+        alert(menor+" e "+maior);
+   }
+</script>
+</html>

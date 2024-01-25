@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>EX17</h1>
+    <input type="button" value="Calcular" onclick="calcular()">
+</body>
+<script>
+    function calcular(){
+
+        let num1 = prompt("digite o primeiro numero interiro:");
+        let num2 = prompt("digite o segundo numero interiro:");
+
+        if(((num1/num2).toFixed(0)*num2) == num1){
+            alert("São múltiplos.");
+        }else {
+            alert("Não São múltiplos.");
+        }
+    }
+</script>
+</html>

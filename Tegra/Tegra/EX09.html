@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>EX09</h1>
+    <p id="p1"> historico </p>
+
+    <input type="button" value="Calcular" onclick="Calcular()">
+
+</body>
+<script>
+ 
+function Calcular() {
+    var segundos = prompt("insira tempo em segundos");
+    var segundosSobra = 10;
+    var minutos = 0
+    var minutosSobra = 0;
+    var horas = 0;
+
+    if (segundos >= 60){
+        segundosSobra = segundos%60
+        minutos = (segundos-segundosSobra)/60;
+    
+        if (minutos >= 60){
+            minutosSobra = minutos%60
+            horas = (minutos-minutosSobra)/60;
+        }
+        else{
+        minutosSobra = minutos;
+        }
+    }   
+    else {
+        segundosSobra = segundos;
+    }
+
+    alert(horas + ":" + minutosSobra + ":" + segundosSobra);
+}
+
+</script>
+</html>

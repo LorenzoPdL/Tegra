@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>EX13</h1>
+    <input type="button" value="Calcular" onclick="LOG()">
+</body>
+<script>
+    function LOG(){
+        alert("valor devido: " + calcularValor());
+    }
+
+    function calcularValor(){
+
+        let minutos = prompt("Digite a quantidade de minutos");
+        let valorDevido = 50;
+
+        if(minutos>100){
+            valorDevido += (2*(minutos-100));
+        }
+        return valorDevido;
+    }
+</script>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>EX05</h1>
+    <input type="button" value="Novo Calculo" onclick="novoCalculo()">
+
+</body>
+<script>
+
+    function novoCalculo(){
+
+        let raio = prompt("insira o raio");
+        let area = Math.PI*(raio**2);
+        let roundedArea = "o raio e: "+area.toFixed(3);
+        alert(roundedArea);
+    }
+
+
+</script>
+</html>

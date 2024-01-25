@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>EX30</h1>
+    <input type="button" value="novo Calculo" onclick="calculo()">
+</body>
+<script>
+function calculo(){
+
+    let input = prompt("insira o numero");
+    let retorno = '';
+    let formatacao = [
+        [2,3,4,5,6,7,8,9],
+        ['vinte','trinta','quarenta','cinquenta','sessenta','setenta','oitenta','noventa'],
+        [1,2,3,4,5,6,7,8,9,0],
+        ['um','dois','tres','quatro','cinco','seis','sete','oito','nove','zero']
+    ];
+
+    if (input.length >2 || input == ''){
+        alert("numero invalido")
+        return 0;
+    }
+
+    switch (parseInt(input)) {
+        case 10:
+            retorno = "dez";
+            break;
+        case 11:
+            retorno = "onze";
+            break;
+        case 12:
+            retorno = "doze";
+            break;
+        case 13:
+            retorno = "treze";
+            break;
+        case 14:
+            retorno = "quatorze";
+            break;
+        case 15:
+            retorno = "quinze";
+            break;
+        case 16:
+            retorno = "dezeseis";
+            break;
+        case 17:
+            retorno = "dezesete";
+            break;
+        case 18:
+            retorno = "dezoito";
+            break;
+        case 19:
+            retorno = "dezenove";
+            break;
+        default:
+            break;
+    }
+
+    if(input.length > 1 && retorno == ''){
+        for(let i=0; i < formatacao[0].length;i++){
+            if(input.charAt(0) == formatacao[0][i]){
+                retorno += formatacao[1][i];
+            }
+        }
+
+        for(let i=0; i < formatacao[2].length-1;i++){
+            if(input.charAt(1) == formatacao[2][i]){
+                retorno += " e "+formatacao[3][i];
+            }
+        }
+
+    }else if(input.length == 1 && retorno == ''){
+        for(let i=0; i < formatacao[2].length;i++){
+            if(input.charAt(0) == formatacao[2][i]){
+                retorno = formatacao[3][i];
+            }
+        }
+    }
+    alert(retorno);
+}
+
+
+</script>
+</html>

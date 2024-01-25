@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>EX24</h1>
+    <input type="button" value="calcular" onclick="calc()">
+</body>
+<script>
+    function calc(){
+
+        let valoresRecebidos = prompt('Números iniciais (DIVIDIR COM ", ")');
+        let ordenados = "";
+        let buffer = [];
+        let num = 0;
+
+        for (let i = 0; i <= valoresRecebidos.length; i++) {
+            if(valoresRecebidos.charAt(i) != "," && valoresRecebidos.charAt(i) != " "){
+                buffer[num] = parseInt(valoresRecebidos.charAt(i));
+                num++;
+            }
+        }
+
+        buffer = buffer.sort();
+        
+        for(let i = 0; i < buffer.length-1; i++){
+            ordenados += buffer[i] + ", ";
+        }
+        alert(ordenados);
+   }
+</script>
+</html>

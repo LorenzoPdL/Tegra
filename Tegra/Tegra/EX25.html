@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>EX25</h1>
+    <input type="button" value="calcular" onclick="aumento()">
+</body>
+<script>
+
+    // auxilo de senhor luis ernesto (para otimizacao do codigo)
+    function aumento(){
+
+        let nascimento = prompt("informe dia e mes de nascimento (dd/mm)");
+        let valores = nascimento.split("/");
+
+        if(valores.length != 2){
+            alert("data invalida")
+            return 0;
+        }
+
+        let f = [ 
+            [3,21,4,20,'Áries'],
+            [4,21,5,20,'Touro'],
+            [5,21,6,20,'Gêmeos'],
+            [6,21,7,22,'Câncer'],
+            [7,23,8,22,'Leão'],
+            [8,23,9,22,'Virgem'],
+            [9,23,10,22,'Libra'],
+            [9,23,10,21,'Escorpião'],
+            [11,22,12,21,'Sagitário'],
+            [12,22,1,20,'Capricórnio'],
+            [1,21,2,18,'Aquário'],
+            [2,19,3,20,'Peixes']
+            ];
+
+        for (let x=0;x<f.length;x++) {
+            if((valores[1] == f[x][0] && valores[0] >= f[x][1])||(valores[1] == f[x][2] && valores[0] <= f[x][3])){
+                alert(f[x][4]);
+            }
+        }  
+
+/*
+        if((valores[1] == 3 && valores[0] >= 21)||(valores[1] == 4 && valores[0] <= 20)){
+            alert("Signo: Áries");
+        }else if((valores[1] == 4 && valores[0] >= 21)||(valores[1] == 5 && valores[0] <= 20)){
+            alert("Signo: Touro");
+        }else if((valores[1] == 5 && valores[0] >= 21)||(valores[1] == 6 && valores[0] <= 20)){
+            alert("Signo: ");
+        }else if((valores[1] == 6 && valores[0] >= 21)||(valores[1] == 7 && valores[0] <= 22)){
+            alert("Signo: ");
+        }else if((valores[1] == 7 && valores[0] >= 23)||(valores[1] == 8 && valores[0] <= 22)){
+            alert("Signo: ");
+        }else if((valores[1] == 8 && valores[0] >= 23)||(valores[1] == 9 && valores[0] <= 22)){
+            alert("Signo: ");
+        }else if((valores[1] == 9 && valores[0] >= 23)||(valores[1] == 10 && valores[0] <= 22)){
+            alert("Signo: ");
+        }else if((valores[1] == 10 && valores[0] >= 23)||(valores[1] == 11 && valores[0] <= 21)){
+            alert("Signo: ");
+        }else if((valores[1] == 11 && valores[0] >= 22)||(valores[1] == 12 && valores[0] <= 21)){
+            alert("Signo: ");
+        }else if((valores[1] == 12 && valores[0] >= 22)||(valores[1] == 1 && valores[0] <= 20)){
+            alert("Signo: ");
+        }else if((valores[1] == 1 && valores[0] >= 21)||(valores[1] == 2 && valores[0] <= 18)){
+            alert("Signo: ");
+        }else if((valores[1] == 2 && valores[0] >= 19)||(valores[1] == 3 && valores[0] <= 20)){
+            alert("Signo: ");
+        }
+        */
+    }
+
+            
+   
+</script>
+</html>

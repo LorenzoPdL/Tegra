@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>EX19</h1>
+    <input type="button" value="calcular" onclick="aumento()">
+</body>
+<script>
+    function aumento(){
+
+        let salario = prompt("Digite o salario da pessoa:");
+
+        if(salario < 1000){
+            let novoSalario = parseInt(salario)+((salario/100)*20);
+            alert("Novo salário = R$ "+novoSalario+", Aumento = R$ "+(parseInt(novoSalario)-parseInt(salario))+", Porcentagem = 20 %");
+        } else if(salario < 3000){
+            let novoSalario = parseInt(salario)+((salario/100)*15);
+            alert("Novo salário = R$ "+novoSalario+", Aumento = R$ "+(parseInt(novoSalario)-parseInt(salario))+", Porcentagem = 15 %");
+        }else if(salario < 8000){
+            let novoSalario = parseInt(salario)+((salario/100)*10);
+            alert("Novo salário = R$ "+novoSalario+", Aumento = R$ "+(parseInt(novoSalario)-parseInt(salario))+", Porcentagem = 10 %");
+        }else if(salario > 8000){
+            let novoSalario = parseInt(salario)+((salario/100)*5);
+            alert("Novo salário = R$ "+novoSalario+", Aumento = R$ "+(parseInt(novoSalario)-parseInt(salario))+", Porcentagem = 05 %");
+        }else{
+            alert("erro: nenhum valor inserido");
+            }
+            
+   }
+</script>
+</html>

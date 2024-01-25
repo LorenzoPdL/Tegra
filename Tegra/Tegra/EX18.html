@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>EX18</h1>
+    <input type="button" value="Calcular" onclick="calcular()">
+</body>
+<script>
+    function calcular(){
+
+        let escala = prompt("Você vai digitar a temperatura em qual escala (C/F)?");
+        let temperatura = 0;
+
+        if(escala.toUpperCase() == "F"){
+            temperatura = prompt("Digite a temperatura em Fahrenheit:");
+            temperatura = (temperatura - 32)*(5/9);
+            alert("Temperatura equivalente em Celsius: "+temperatura);
+        } else if(escala.toUpperCase() == "C") {
+            temperatura = prompt("Digite a temperatura em Celsius:");
+            temperatura = (temperatura * (9/5))+ 32;
+            alert("Temperatura equivalente em Fahrenheit: "+temperatura);
+        } else{
+            alert("erro: nenhum valor inserido");
+        }
+
+    }
+</script>
+</html>

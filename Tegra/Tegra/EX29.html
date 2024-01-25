@@ -1,0 +1,49 @@
+
+            <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>EX29</h1>
+    <input type="button" value="calcular" onclick="inputFilter()">
+</body>
+<script>
+
+    function inputFilter(){
+    let input = prompt("insira o CNPJ com a formatacao padrao: (00.000.000/0001-00)");
+    let VD = input.split("-");
+    let cnpj="";
+    let buffer=0;
+    let verificador = [
+        [6,7,8,9,2,3,4,5,6,7,8,9],
+        [5,6,7,8,9,2,3,4,5,6,7,8,9]
+    ];
+    for(let i=0; i < VD[0].length; i++){
+        if(VD[0].charAt(i) != "." && VD[0].charAt(i) != "/"){
+            cnpj += VD[0].charAt(i);
+        }
+    }
+    //alert(cnpj);
+    for(let i=0; i < cnpj.length; i++){
+    buffer += parseInt(cnpj.charAt(i))*verificador[0][i];
+    }
+    cnpj += ""+buffer%11;
+    VD[0] = ""+buffer%11;
+    buffer = 0;
+    for(let i=0; i < cnpj.length; i++){
+    buffer += parseInt(cnpj.charAt(i))*verificador[1][i];
+    }
+    VD[0] += buffer%11;
+
+    if(VD[0] == VD[1]){
+        alert("CNPJ Valido");
+    } else {
+        alert("CNPJ Invalido");
+    }
+}
+
+</script>
+</html>

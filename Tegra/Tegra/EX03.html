@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>EX03</h1>
+    <input type="button" value="Novo Calculo" onclick="insert()">
+
+</body>
+<script>
+    function insert(){
+
+        let person1 = {
+
+            name: prompt("insert name 1"),
+            age: prompt("insert age 1")
+        };
+
+        let person2 = {
+
+            name: prompt("insert name 2"),
+            age: prompt("insert age 2")
+        };
+        
+        let result = "a idade media entre "+person1.name+" e "+person2.name+" e de: "+((parseInt(person1.age)+parseInt(person2.age))/2).toFixed(1)+"anos";
+
+        alert(result);
+    }   
+</script>
+</html>

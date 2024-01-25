@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>EX08</h1>
+    <input type="button" value="Novo Calculo" onclick="novoCalculo()">
+
+</body>
+<script>
+    
+    function novoCalculo(){
+
+    var A = prompt("insira valor A");
+    var B = prompt("insira valor B");
+    var C = prompt("insira valor C");
+
+
+    var aQuadrado = (A**2).toFixed(4);
+    var aTriangulo = ((+A * +B)/2).toFixed(4);
+    var aTrapezio = (((+A + +B)*+C)/+2).toFixed(4);
+    var resultado = "a) "+aQuadrado+" b) "+aTriangulo+" c) "+aTrapezio;
+    alert(resultado);
+    }
+
+</script>
+</html>

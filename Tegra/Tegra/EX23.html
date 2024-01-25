@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>EX23</h1>
+    <input type="button" value="calcular" onclick="calc()">
+</body>
+<script>
+    function calc(){
+
+        let valorInicial = prompt("Número inicial:");
+        let valorFinal = prompt("Número final:");
+        let soma = 0;
+
+        for(let i = parseInt(valorInicial); i < parseInt(valorFinal); i++){
+            if(i%2 == 1){
+            soma += i;
+            }
+        }
+        alert(soma);
+   }
+</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>EX27</h1>
+    <input type="button" value="calcular" onclick="palinCheck()">
+</body>
+<script>
+    function palinCheck(){
+
+        let palavra = prompt('Palavra:').toLowerCase();
+        let palindroma = true;
+
+        for (let i = 0; i < palavra.length; i++) {
+            if(palavra.charAt(i) != palavra.charAt(palavra.length - (i+1))){
+            palindroma = false
+            break;
+            }
+        }
+        if (palindroma == true) {
+            alert("É palíndroma")
+        }else {
+            alert("Não é palíndroma.");
+        }
+   }
+</script>
+</html>

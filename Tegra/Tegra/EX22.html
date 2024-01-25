@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>EX22</h1>
+    <input type="button" value="calcular" onclick="tabuada()">
+    <p id="p1">list</p>
+</body>
+<script>
+    function tabuada(){
+
+        let valor = prompt("Deseja a tabuada para qual valor?");
+        let lista = "resultado:<br>";
+
+        for(let i = 1; i <= 10; i++){
+            lista += valor +" x "+ i +" = "+ valor*i +"<br>";
+        }
+        document.getElementById("p1").innerHTML = lista;
+   }
+</script>
+</html>

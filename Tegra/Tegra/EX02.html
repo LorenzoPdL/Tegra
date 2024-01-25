@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>EX02</h1>
+    <input type="button" value="Novo Calculo" onclick="newCalc()">
+
+</body>
+<script>
+    function newCalc(){
+
+    var Values = [];
+    
+    let input = prompt("insert base");
+    if (input!=null && input!=""){
+
+        Values[0] = input;
+    }
+    else{
+
+        alert("nothing added(null or invalid value)");
+    }
+
+    input = prompt("insert height");
+    if (input!=null && input!=""){
+
+        Values[1] = input;
+    }
+    else{
+
+        alert("nothing added(null or invalid value)");
+    }
+
+    let calcResult = {
+
+        area: Values[0]*Values[1],
+        perimetro: (Values[0]*2)+(Values[1]*2),
+        diagonal: Math.sqrt((Values[0]**2)+(Values[1]**2))
+    }
+
+    let resumo = "( base:"+Values[0]+", height: "+Values[1]+" ) "+"area: "+(calcResult.area).toFixed(4)+" perimeter: "+(calcResult.perimetro).toFixed(4)+" Diagonal:"+(calcResult.diagonal).toFixed(4);
+    alert(resumo);
+    }
+</script>
+</html>

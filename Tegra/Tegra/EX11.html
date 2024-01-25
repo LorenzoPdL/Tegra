@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>EX11</h1>
+
+    <input type="button" value="Calcular" onclick="Calcular()">
+
+</body>
+<script>
+ 
+function Calcular() {
+    let nota = [];
+    nota[0] = prompt("insira nota do primeiro trimestre");
+    nota[1] = prompt("insira nota do segundo trimestre");
+    if((parseInt(nota[0])+parseInt(nota[1]))<60){
+        alert("nota final: "+(parseInt(nota[0])+parseInt(nota[1]))+", resultado: reprovado");
+    }
+    else{
+        alert("nota final: "+(parseInt(nota[0])+parseInt(nota[1]))+", resultado: aprovado");
+    }
+}
+
+</script>
+</html>
